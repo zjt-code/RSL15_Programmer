@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\myutils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\JLink_API_Typedef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\cgms_prm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\myutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Debug\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Release\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_MinSizeRel\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_RelWithDebInfo\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\CMakeFiles\643902bd7b03bdaec0f8ea07bece559a\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\mainwindow.ui" />
+    <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\autouic_Debug.stamp" />
+    <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\autouic_Release.stamp" />
+    <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{02FEB9D8-716D-3769-9020-A3CBF52CE76B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{DD28E952-569E-3E57-975F-1481BAD36DCD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{63604A59-F2F1-3C55-B9D8-69F40EF192B1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

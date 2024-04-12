@@ -1,0 +1,10 @@
+^E:\QT_PROG\QT_RSL15_PROGRAMM\P3A_RSL15_PROGRAMMER\BUILD\CMAKEFILES\EC6B6D040071AF16D1C6AA7454CA3424\GENERATE.STAMP.RULE
+setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SE:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer -BE:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

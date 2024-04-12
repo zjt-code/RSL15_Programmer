@@ -1,0 +1,22 @@
+^E:\QT_PROG\QT_RSL15_PROGRAMM\P3A_RSL15_PROGRAMMER\BUILD\CMAKEFILES\643902BD7B03BDAEC0F8EA07BECE559A\AUTOUIC_(CONFIG).STAMP.RULE
+setlocal
+cd E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\QT_PROG\QT_RSL15_PROGRAMM\P3A_RSL15_PROGRAMMER\CMAKELISTS.TXT
+setlocal
+"D:\Program Files\CMake\bin\cmake.exe" -SE:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer -BE:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build --check-stamp-file E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

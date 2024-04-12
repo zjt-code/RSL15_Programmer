@@ -1,0 +1,176 @@
+{
+	"BUILD_DIR" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen",
+	"CMAKE_BINARY_DIR" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer",
+	"CMAKE_EXECUTABLE" : "D:/Program Files/CMake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/CMakeLists.txt",
+		"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/3.25.1/CMakeSystem.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake",
+		"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/3.25.1/CMakeCXXCompiler.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeGenericSystem.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeCXXInformation.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/MSVC-CXX.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/MSVC.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows-MSVC-CXX.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows-MSVC.cmake",
+		"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/3.25.1/CMakeRCCompiler.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeRCInformation.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5/Qt5Config.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeParseArguments.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"D:/Program Files/CMake/share/cmake-3.25/Modules/CMakeParseArguments.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/JLink_API_Typedef.h",
+			"MU",
+			"EWIEGA46WW/moc_JLink_API_Typedef.cpp",
+			null
+		],
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/cgms_prm.h",
+			"MU",
+			"EWIEGA46WW/moc_cgms_prm.cpp",
+			null
+		],
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/mainwindow.h",
+			"MU",
+			"EWIEGA46WW/moc_mainwindow.cpp",
+			null
+		],
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/myutils.h",
+			"MU",
+			"EWIEGA46WW/moc_myutils.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/include",
+	"INCLUDE_DIR_Debug" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/include_Release",
+	"MOC_COMPILATION_FILE" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/mocs_compilation.cpp",
+	"MOC_COMPILATION_FILE_Debug" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/mocs_compilation_Debug.cpp",
+	"MOC_COMPILATION_FILE_MinSizeRel" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/mocs_compilation_MinSizeRel.cpp",
+	"MOC_COMPILATION_FILE_RelWithDebInfo" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/mocs_compilation_RelWithDebInfo.cpp",
+	"MOC_COMPILATION_FILE_Release" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/mocs_compilation_Release.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB",
+		"WIN32",
+		"_AMD64_"
+	],
+	"MOC_DEFINITIONS_Debug" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB", "WIN32", "_AMD64_" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build",
+		"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/include",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/include/QtWidgets",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/include/QtGui",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/include/QtANGLE",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/include/QtCore",
+		"D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/mkspecs/win32-msvc"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : true,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE_Debug" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/ParseCache_Debug.txt",
+	"PARSE_CACHE_FILE_MinSizeRel" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/ParseCache_MinSizeRel.txt",
+	"PARSE_CACHE_FILE_RelWithDebInfo" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/ParseCache_RelWithDebInfo.txt",
+	"PARSE_CACHE_FILE_Release" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/ParseCache_Release.txt",
+	"QT_MOC_EXECUTABLE" : "D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/Qt/Qt5.12.9/5.12.9/msvc2017_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 12,
+	"SETTINGS_FILE" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE_Debug" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/AutogenUsed_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/AutogenUsed_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/AutogenUsed_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/AutogenUsed_Release.txt",
+	"SOURCES" : 
+	[
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/myutils.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
