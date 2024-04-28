@@ -86,6 +86,12 @@
 			"MU",
 			"EWIEGA46WW/moc_myutils.cpp",
 			null
+		],
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/optiondialog.h",
+			"MU",
+			"EWIEGA46WW/moc_optiondialog.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -164,6 +170,11 @@
 		],
 		[
 			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/myutils.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/optiondialog.cpp",
 			"MU",
 			null
 		]

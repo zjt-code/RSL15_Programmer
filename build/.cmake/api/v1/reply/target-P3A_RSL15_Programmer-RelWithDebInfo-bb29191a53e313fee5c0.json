@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "MinSizeRel/P3A_RSL15_Programmer.exe"
+			"path" : "RelWithDebInfo/P3A_RSL15_Programmer.exe"
 		},
 		{
-			"path" : "MinSizeRel/P3A_RSL15_Programmer.pdb"
+			"path" : "RelWithDebInfo/P3A_RSL15_Programmer.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -34,13 +34,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 42,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 55,
+				"line" : 63,
 				"parent" : 0
 			},
 			{
@@ -89,7 +89,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
 				}
 			],
 			"defines" : 
@@ -125,7 +125,7 @@
 				},
 				{
 					"backtrace" : 0,
-					"path" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/include_MinSizeRel"
+					"path" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/P3A_RSL15_Programmer_autogen/include_RelWithDebInfo"
 				},
 				{
 					"backtrace" : 2,
@@ -172,7 +172,8 @@
 				0,
 				1,
 				2,
-				7
+				4,
+				10
 			]
 		}
 	],
@@ -188,11 +189,11 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /O1 /Ob1 /DNDEBUG",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /INCREMENTAL:NO /subsystem:console",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
 				"role" : "flags"
 			},
 			{
@@ -233,7 +234,8 @@
 				0,
 				1,
 				2,
-				7
+				4,
+				10
 			]
 		},
 		{
@@ -241,25 +243,28 @@
 			"sourceIndexes" : 
 			[
 				3,
-				4,
-				6,
-				8,
-				9
+				5,
+				7,
+				9,
+				11,
+				12,
+				13
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				5,
-				10
+				6,
+				8,
+				14
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				11
+				15
 			]
 		}
 	],
@@ -269,7 +274,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/P3A_RSL15_Programmer_autogen/mocs_compilation_MinSizeRel.cpp",
+			"path" : "build/P3A_RSL15_Programmer_autogen/mocs_compilation_RelWithDebInfo.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -288,6 +293,22 @@
 			"backtrace" : 1,
 			"path" : "mainwindow.h",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "optiondialog.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "optiondialog.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "optiondialog.ui",
+			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 1,
@@ -318,13 +339,19 @@
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/P3A_RSL15_Programmer_autogen/include_MinSizeRel/ui_mainwindow.h",
+			"path" : "build/P3A_RSL15_Programmer_autogen/include_RelWithDebInfo/ui_optiondialog.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/P3A_RSL15_Programmer_autogen/autouic_MinSizeRel.stamp",
+			"path" : "build/P3A_RSL15_Programmer_autogen/include_RelWithDebInfo/ui_mainwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/P3A_RSL15_Programmer_autogen/autouic_RelWithDebInfo.stamp",
 			"sourceGroupIndex" : 2
 		},
 		{

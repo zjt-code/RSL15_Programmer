@@ -37,6 +37,9 @@ if(ANDROID)
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    optiondialog.cpp
+    optiondialog.h
+    optiondialog.ui
   )
 else()
   add_executable(P3A_RSL15_Programmer
@@ -44,11 +47,16 @@ else()
     main.cpp
     mainwindow.cpp
     mainwindow.h
+    optiondialog.cpp
+    optiondialog.h
+    optiondialog.ui
     JLink_API_Typedef.h
     mainwindow.ui
     cgms_prm.h
     myutils.cpp
     myutils.h
+    # myoptiondialog.h
+    # myoptiondialog.cpp
   )
 endif()
 

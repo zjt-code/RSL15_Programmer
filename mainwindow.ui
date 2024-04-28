@@ -116,7 +116,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="File">
@@ -129,13 +129,7 @@
     <addaction name="separator"/>
     <addaction name="actionOption"/>
    </widget>
-   <widget class="QMenu" name="Help">
-    <property name="title">
-     <string>帮助</string>
-    </property>
-   </widget>
    <addaction name="File"/>
-   <addaction name="Help"/>
   </widget>
   <action name="actionOpen">
    <property name="text">

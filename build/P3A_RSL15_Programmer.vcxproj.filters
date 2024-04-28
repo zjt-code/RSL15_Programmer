@@ -10,6 +10,9 @@
     <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\mainwindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\optiondialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\myutils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -27,6 +30,9 @@
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\optiondialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\JLink_API_Typedef.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -36,13 +42,25 @@
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\myutils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Debug\ui_optiondialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Debug\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Release\ui_optiondialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Release\ui_mainwindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_MinSizeRel\ui_optiondialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_MinSizeRel\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_RelWithDebInfo\ui_optiondialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_RelWithDebInfo\ui_mainwindow.h">
@@ -56,6 +74,7 @@
     <CustomBuild Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\optiondialog.ui" />
     <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\mainwindow.ui" />
     <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\autouic_Debug.stamp" />
     <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\autouic_Release.stamp" />

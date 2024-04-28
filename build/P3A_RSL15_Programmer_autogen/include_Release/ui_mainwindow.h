@@ -39,7 +39,6 @@ public:
     QLabel *label_2;
     QMenuBar *menubar;
     QMenu *File;
-    QMenu *Help;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -79,15 +78,12 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 26));
+        menubar->setGeometry(QRect(0, 0, 800, 23));
         File = new QMenu(menubar);
         File->setObjectName(QString::fromUtf8("File"));
-        Help = new QMenu(menubar);
-        Help->setObjectName(QString::fromUtf8("Help"));
         MainWindow->setMenuBar(menubar);
 
         menubar->addAction(File->menuAction());
-        menubar->addAction(Help->menuAction());
         File->addSeparator();
         File->addSeparator();
         File->addAction(actionOpen);
@@ -116,7 +112,6 @@ public:
         BT_WriteParam->setText(QApplication::translate("MainWindow", "\345\206\231\345\205\245\345\217\202\346\225\260", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "\345\272\217\345\210\227\345\217\267", nullptr));
         File->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266", nullptr));
-        Help->setTitle(QApplication::translate("MainWindow", "\345\270\256\345\212\251", nullptr));
     } // retranslateUi
 
 };

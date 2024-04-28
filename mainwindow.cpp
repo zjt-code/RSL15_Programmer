@@ -5,18 +5,40 @@
 #include "JLink_API_Typedef.h"
 #include "direct.h"
 #include "myutils.h"
+#include "./ui_optiondialog.h"
+#include "optiondialog.h"
+#include "QAction"
+
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::MainWindow) 
+    // , myOptionDialog(new MyOptionDialog)  
+    , opdialog(new OptionDialog) 
 {
 
-    ui->setupUi(this);
+    ui->setupUi(this); 
+
     this->setWindowTitle(QString(APP_VER));
     setWindowFlags(windowFlags()&~Qt::WindowMaximizeButtonHint);
 
-    //connect(ui->Help,&ui->Help->triggered, this, &on_help_triggered);
+    // QAction * myHelpAction= new QAction(QStringLiteral("帮助"),this);
+    // myHelpAction->setObjectName("myHelp");
+    // ui->menubar->addAction(myHelpAction);
+    // connect(myHelpAction,&QAction::triggered,this,&MainWindow::on_help_triggered);
+   // connect(myHelpAction,SIGNAL(QAction::triggered()),this, SLOT(on_help_triggered()));
+    // QMenu * myHelpMenu = ui->menubar->addMenu(QStringLiteral("帮助"));
+
+    // QAction *myHelpAction = ui->menubar->addMenu(myHelpMenu);    
+
+    //connect(ui->Help,SIGNAL(ui->Help->mousePressEvent()), this, SLOT(on_help_triggered()));
+
+    // connect(opdialog,SIGNAL(OptionDialog::signal_button_ok()),this,SLOT(on_optiondialog_accepted()));
+    // connect(opdialog,SIGNAL(OptionDialog::signal_button_cancell()),this,SLOT(on_optiondialog_rejected()));
+    ui->menubar->addAction(QStringLiteral("选项"),this,SLOT(on_menuOption_triggered()));
+    ui->menubar->addAction(QStringLiteral("帮助"),this,SLOT(on_help_triggered()));
+
     char dir[128];
     _getcwd(dir,128);
 
@@ -27,6 +49,8 @@ MainWindow::MainWindow(QWidget *parent)
     strcat_s(dir,"/JLink_x64.dll");
   //  printf("exe dir=%s\r\n",dir);    
     hdl_dll =LoadLibrary(dir);
+
+
 
 #if ENABLE_QBUG
 
@@ -49,7 +73,9 @@ MainWindow::~MainWindow()
 {
     if(hdl_dll!=NULL)
     FreeLibrary(hdl_dll);
+    // delete myOptionDialog;
     delete ui;
+    
 }
 
 
@@ -146,13 +172,17 @@ void MainWindow::on_BT_Programm_clicked()
             std::cout<<"JLINKARM_IsOpen="<<(uint32_t)JLINKARM_IsOpen()<<std::endl;
 
         //set swd speed
-         JLINKARM_SetSpeed(500);
+
+        ui->Info_TextBrowser->append("Speed = " + QString::number(opdialog->Option_get_speed())+"Khz");
+        ui->Info_TextBrowser->append("Interface = " + QString::fromStdString(opdialog->Option_get_inface()==1?"SWD":"JTAG"));
+
+        JLINKARM_SetSpeed(opdialog->Option_get_speed());
         //select device
         int retcmd=JLINKARM_ExecCommand("Device=RSL15-512",NULL,0);
         std::cout<<"set name ret="<<retcmd<<std::endl;
 
         //select SWD 
-        retcmd=JLINKARM_TIF_Select(1);
+        retcmd=JLINKARM_TIF_Select(opdialog->Option_get_inface());
        
         std::cout<<"JLINKARM_TIF_Select ="<<retcmd<<std::endl;
        
@@ -434,3 +464,64 @@ void MainWindow::on_actionOption_triggered()
 {
       ui->Info_TextBrowser->append("action Option triggered!");
 }
+
+
+
+void MainWindow::on_help_triggered()
+{
+
+    std::cout<<"Help is toggled" <<std::endl;
+}
+void MainWindow::on_menuOption_triggered()
+{
+    ui->Info_TextBrowser->append("on_menuOption_triggered ");      
+    
+   // myOptionDialog->show();
+
+    // opdialog->
+
+    // OptionDialog * a = new OptionDialog();
+    // a->show();
+
+     opdialog->show();
+
+     Ui::OptionDialog * a = opdialog->OptionDialog_Get_ui();
+     
+     //opdialog.
+
+   /// OptionDialog *a = myOptionDialog->OptionDialog_Get_ui();
+
+    
+
+        std::cout<< a->ComBoxSpeed->count()<<std::endl;
+        std::cout<< a->ComBoxInterface->count()<<std::endl;  
+
+
+        std::cout<<"speed = "<<a->ComBoxSpeed->currentIndex()<<" ";
+        std::cout<<a->ComBoxSpeed->currentText().toStdString()<<std::endl;
+
+
+        std::cout<<"Interface = "<<a->ComBoxInterface->currentIndex()<<" ";
+        std::cout<<a->ComBoxInterface->currentText().toStdString()<<std::endl;
+
+       std::cout<<"myOptionDialog end " <<std::endl;
+
+      
+
+}
+
+void MainWindow::on_optiondialog_accepted()
+{
+    std::cout<<"optiondialog OK is pressed"<<std::endl;
+
+}
+
+void MainWindow::on_optiondialog_rejected()
+{
+
+    std::cout<<"optiondialog cancelled is pressed"<<std::endl;
+
+
+}
+
+
