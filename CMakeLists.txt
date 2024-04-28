@@ -55,8 +55,8 @@ else()
     cgms_prm.h
     myutils.cpp
     myutils.h
-    # myoptiondialog.h
-    # myoptiondialog.cpp
+    hardware_config.cpp
+    hardware_config.h
   )
 endif()
 

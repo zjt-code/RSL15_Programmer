@@ -38,13 +38,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    // MyOptionDialog *myOptionDialog;
     OptionDialog *opdialog;
     
     //Define dll handle
     HMODULE hdl_dll;
-    QString strLoadFileDir;
-    prm_t m_prm_db;
+    QString strLoadFileDir;  
     uint8_t Device_MAC[6];    
 
 };

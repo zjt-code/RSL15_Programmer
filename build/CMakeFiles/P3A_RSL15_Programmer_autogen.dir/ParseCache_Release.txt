@@ -12,7 +12,9 @@ E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/mainwindow.h
 E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/optiondialog.h
  mmc:Q_OBJECT
 E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/myutils.h
+E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/hardware_config.h
 E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/myutils.cpp
+E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/hardware_config.cpp
 E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/myoptiondialog.h
  mmc:Q_OBJECT
 E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/myoptiondialog.cpp

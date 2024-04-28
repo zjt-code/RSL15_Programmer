@@ -4,22 +4,22 @@
 
 typedef struct
 {
-    uint16_t          rsvd; //for 4 byte alignment
-    int16_t		    prmOffset;
-    uint16_t          prmVD1;
-    uint16_t          prmRL1;
+    uint16_t            rsvd; //for 4 byte alignment
+    int16_t		        prmOffset;
+    uint16_t            prmVD1;
+    uint16_t            prmRL1;
     int16_t         	prmAD1;
-    uint16_t          prmRL2;
+    uint16_t            prmRL2;
     int16_t         	prmAD2;
-    uint16_t          prmCrc1;
+    uint16_t            prmCrc1;
 } P1_t;
 
 typedef struct
 {
-    uint16_t          prmVD2;
-    uint16_t          prmRL2;
-    uint16_t         	prmAD2;
-    uint16_t          prmCrc2;
+    uint16_t            prmVD2;
+    uint16_t            prmRL2;
+    uint16_t            prmAD2;
+    uint16_t            prmCrc2;
 } P2_t;
 
 typedef struct

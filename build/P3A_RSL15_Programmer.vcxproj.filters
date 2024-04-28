@@ -16,6 +16,9 @@
     <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\myutils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\hardware_config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\mocs_compilation_Release.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -40,6 +43,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\myutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\hardware_config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Debug\ui_optiondialog.h">

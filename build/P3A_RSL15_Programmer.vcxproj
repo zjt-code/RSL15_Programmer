@@ -480,6 +480,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\cgms_prm.h" />
     <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\myutils.cpp" />
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\myutils.h" />
+    <ClCompile Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\hardware_config.cpp" />
+    <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\hardware_config.h" />
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Debug\ui_optiondialog.h" />
     <ClInclude Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\include_Debug\ui_mainwindow.h" />
     <None Include="E:\QT_PROG\Qt_RSL15_Programm\P3A_RSL15_Programmer\build\P3A_RSL15_Programmer_autogen\autouic_Debug.stamp">

@@ -76,6 +76,12 @@
 			null
 		],
 		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/hardware_config.h",
+			"MU",
+			"EWIEGA46WW/moc_hardware_config.cpp",
+			null
+		],
+		[
 			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -158,6 +164,11 @@
 	"SETTINGS_FILE_Release" : "E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/build/CMakeFiles/P3A_RSL15_Programmer_autogen.dir/AutogenUsed_Release.txt",
 	"SOURCES" : 
 	[
+		[
+			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/hardware_config.cpp",
+			"MU",
+			null
+		],
 		[
 			"E:/QT_PROG/Qt_RSL15_Programm/P3A_RSL15_Programmer/main.cpp",
 			"MU",

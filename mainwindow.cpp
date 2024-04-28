@@ -8,37 +8,24 @@
 #include "./ui_optiondialog.h"
 #include "optiondialog.h"
 #include "QAction"
+#include "hardware_config.h"
 
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) 
-    // , myOptionDialog(new MyOptionDialog)  
     , opdialog(new OptionDialog) 
 {
 
     ui->setupUi(this); 
-
     this->setWindowTitle(QString(APP_VER));
     setWindowFlags(windowFlags()&~Qt::WindowMaximizeButtonHint);
-
-    // QAction * myHelpAction= new QAction(QStringLiteral("帮助"),this);
-    // myHelpAction->setObjectName("myHelp");
-    // ui->menubar->addAction(myHelpAction);
-    // connect(myHelpAction,&QAction::triggered,this,&MainWindow::on_help_triggered);
-   // connect(myHelpAction,SIGNAL(QAction::triggered()),this, SLOT(on_help_triggered()));
-    // QMenu * myHelpMenu = ui->menubar->addMenu(QStringLiteral("帮助"));
-
-    // QAction *myHelpAction = ui->menubar->addMenu(myHelpMenu);    
-
-    //connect(ui->Help,SIGNAL(ui->Help->mousePressEvent()), this, SLOT(on_help_triggered()));
-
-    // connect(opdialog,SIGNAL(OptionDialog::signal_button_ok()),this,SLOT(on_optiondialog_accepted()));
-    // connect(opdialog,SIGNAL(OptionDialog::signal_button_cancell()),this,SLOT(on_optiondialog_rejected()));
+ 
     ui->menubar->addAction(QStringLiteral("选项"),this,SLOT(on_menuOption_triggered()));
     ui->menubar->addAction(QStringLiteral("帮助"),this,SLOT(on_help_triggered()));
 
+    
     char dir[128];
     _getcwd(dir,128);
 
@@ -48,8 +35,10 @@ MainWindow::MainWindow(QWidget *parent)
    // strcat_s(dir,"/JLink_x64.dll");
     strcat_s(dir,"/JLink_x64.dll");
   //  printf("exe dir=%s\r\n",dir);    
-    hdl_dll =LoadLibrary(dir);
+     hdl_dll =LoadLibrary(dir);
 
+
+    
 
 
 #if ENABLE_QBUG
@@ -250,30 +239,20 @@ bool MainWindow::is_SN_OK( QString &SN)
     std::string str_sn = SN.toStdString();
     const char * p_char = str_sn.c_str();
 
-    // std::cout<<str_sn<<std::endl;
-    // printf("%s\r\n",p_char);
+    // SN Start char "D3-"
 
-    for(uint8_t i=0;i<3;i++)
-        if(
-            (p_char[i]<'0')||(p_char[i]>'Z')||((p_char[i]>'9')&&(p_char[i]<'A')))
-        return false;
+    if(p_char[0]!='D' || p_char[1]!= '3' || p_char[2] !='-')
+    return false;
     
   
-   for(uint8_t i=3;i<7;i++)
-    if((p_char[i]<'0')||(p_char[i]>'9'))
-     return false;
+    for(uint8_t i=3; i<SN_LEN; i++)
+    {
+        if((p_char[i]<'0')||(p_char[i]>'9'))
+        return false;
+    }
 
-    m_prm_db.P4.prmWMY[0]=(uint8_t)p_char[0];
-    m_prm_db.P4.prmWMY[1]=(uint8_t)p_char[1];
-    m_prm_db.P4.prmWMY[2]=(uint8_t)p_char[2];
-    m_prm_db.P4.prmWMY[3]=(uint8_t)0;
+    memcpy(g_factory_config.sn_buffer,p_char,SN_LEN);
 
-    m_prm_db.P4.SN=     ((uint16_t)(p_char[3]-'0'))*1000
-                    +   ((uint16_t)(p_char[4]-'0'))*100
-                    +   ( (uint16_t)(p_char[5]-'0'))*10
-                    +   ( (uint16_t)(p_char[6]-'0'))*1;
-    // printf("%c,%c,%c,\r\n",p_char[0],p_char[1],p_char[2]);
-    // printf("%c,%c,%c,\r\n",m_prm_db.P4.prmWMY[0],m_prm_db.P4.prmWMY[1],m_prm_db.P4.prmWMY[2]);
     return true;
 }
 
@@ -301,7 +280,7 @@ void MainWindow::on_BT_WriteParam_clicked()
     
  
 
-    if((Q_Str_SN.length()==7)&&is_SN_OK(Q_Str_SN))
+    if((Q_Str_SN.length()==SN_LEN)&&is_SN_OK(Q_Str_SN))
     {
         //ui->Info_TextBrowser->append(Q_Str_SN);
 
@@ -344,11 +323,11 @@ void MainWindow::on_BT_WriteParam_clicked()
         JLINKARM_ExecCommand("Device=RSL15-512",NULL,0);
 
         //JLINKARM_SetMaxSpeed();
-        int retcmd=JLINKARM_TIF_Select(1);
+        int retcmd=JLINKARM_TIF_Select(opdialog->Option_get_inface());
        
         std::cout<<"JLINKARM_TIF_Select ="<<retcmd<<std::endl;
 
-        JLINKARM_SetSpeed(500);
+        JLINKARM_SetSpeed(opdialog->Option_get_speed());
         
         std::cout<<"JLINLARM_Connect ="<<JLINKARM_Connect()<<std::endl;
 
@@ -366,64 +345,58 @@ void MainWindow::on_BT_WriteParam_clicked()
         ui->Info_TextBrowser->append(QFont("Hdl_dll is invalide").toString());
     }
 
-#if ENABLE_QBUG
-     std::cout<<"sizeof(m_prm_db)"<<sizeof(m_prm_db)<<std::endl;
-     std::cout<<"read para flash"<<std::endl;
-#endif
-
     // /**************************read from flash*/
-    // int ret_read = JLINKARM_ReadMemEx(PARAM_START_ADDR,sizeof(m_prm_db),(void *)&m_prm_db,4);
-
-    // #if ENABLE_QBUG
-    //     std::cout<<"read ret="<<ret_read<<std::endl;
-    //     std::cout<<"SN="<<m_prm_db.P4.prmWMY<<(uint32_t)m_prm_db.P4.SN<<std::endl;
-    //     dump_mem((unsigned char *)&m_prm_db,sizeof(m_prm_db));
-
-    // #endif
+    // int ret_read = JLINKARM_ReadMemEx(PARAM_START_ADDR,sizeof(m_prm_db),(void *)&m_prm_db,4);    // #endif
     /********************write to flash********/
-       // m_prm_db.P4.SN=9999;
-        m_prm_db.P4.prmCrc4=do_crc((uint8_t *)&m_prm_db.P4,sizeof(m_prm_db.P4)-2);
-
+    
         JLINKARM_BeginDownload(0);   //// Indicates start of flash download
-        int32_t ret_write=JLINKARM_WriteMemEx(PARAM_START_ADDR,sizeof(m_prm_db),(void *)&m_prm_db,4);
+        int32_t ret_write=JLINKARM_WriteMemEx(FLASH_ADDR_CONFIG,sizeof(factory_config_t),(void *)&g_factory_config,4);
         std::cout<<"writeMem ret="<<ret_write<<std::endl;
-
         ret_write = JLINKARM_EndDownload(); //// Indicates end of flash download.
                                             //// DLL will download all data into flash memory
 
         // uint32_t ret_write =0;
         //ui->Info_TextBrowser->append(QString::number(ret_write));
 
-        if(ret_write>=0)
-        {
-            ui->Info_TextBrowser->setTextColor(QColor(0,0,255));
-            ui->Info_TextBrowser->append("Write Parameters OK");
-        }
-        else
-        {    ui->Info_TextBrowser->setTextColor(QColor(255,0,0));
-             ui->Info_TextBrowser->append("Wtite Parameters Fail");
-        }
+        // if(ret_write>=0)
+        // {
+           ui->Info_TextBrowser->setTextColor(QColor(0,0,255));
+        //     ui->Info_TextBrowser->append("Write Parameters OK");
+        // }
+        // else
+        // {    ui->Info_TextBrowser->setTextColor(QColor(255,0,0));
+        //      ui->Info_TextBrowser->append("Wtite Parameters Fail");
+        // }
       
       /**************************read from flash*/
 
+        factory_config_t g_readback;
 
-       int ret_read = JLINKARM_ReadMemEx(PARAM_START_ADDR,sizeof(m_prm_db),(void *)&m_prm_db,4);
+
+       int ret_read = JLINKARM_ReadMemEx(FLASH_ADDR_CONFIG,sizeof(factory_config_t),(void *)&g_readback,4);
   
     #if ENABLE_QBUG
-        dump_mem((unsigned char *)&m_prm_db,sizeof(m_prm_db));
+        dump_mem((unsigned char *)&g_factory_config,sizeof(factory_config_t));
+        dump_mem((unsigned char *)&g_readback,sizeof(factory_config_t));
         std::cout<<"read ret="<<ret_read<<std::endl;
-        std::cout<<"SN="<<m_prm_db.P4.prmWMY;
-        std::cout.width(4);
-        std::cout<<(uint32_t)m_prm_db.P4.SN<<std::endl;
+        std::cout<<"SN="<<g_readback.sn_buffer;
+        std::cout.width(14);
+        std::cout<<std::endl;
+       
     #endif
-        char write_sn[128];
-        snprintf(write_sn,128,"Writer SN =%s%04d ",m_prm_db.P4.prmWMY,m_prm_db.P4.SN);
+        // char write_sn[128];
+        // snprintf(write_sn,128,"Writer SN =%s%04d ",m_prm_db.P4.prmWMY,m_prm_db.P4.SN);
 
-        QString q_wtite_sn(write_sn);
+        QString q_wtite_sn((char *)g_readback.sn_buffer);
 
-        ui->Info_TextBrowser->append(q_wtite_sn);
+        ui->Info_TextBrowser->append(q_wtite_sn); 
 
-
+        if(!memcmp((void *)&g_factory_config,(void *)&g_readback,sizeof(factory_config_t)))
+        {   ui->Info_TextBrowser->setTextColor(QColor(0,0,255));
+            ui->Info_TextBrowser->append("Write successfully");}
+        else{
+             ui->Info_TextBrowser->setTextColor(QColor(255,0,0));
+            ui->Info_TextBrowser->append("Write Fail");}
 
     /***Read MAC Address*/ 
         ret_read = JLINKARM_ReadMemEx(MNVR_ADDR,6,(void *)Device_MAC,1);

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="whatsThis">
+   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;你好&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTextBrowser" name="Info_TextBrowser">
     <property name="geometry">
@@ -27,7 +30,7 @@
    <widget class="QPushButton" name="BT_Programm">
     <property name="geometry">
      <rect>
-      <x>670</x>
+      <x>590</x>
       <y>30</y>
       <width>93</width>
       <height>28</height>
@@ -40,7 +43,7 @@
    <widget class="QPushButton" name="BT_ChooseFile">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>490</x>
       <y>30</y>
       <width>93</width>
       <height>28</height>
@@ -53,7 +56,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>30</x>
       <y>30</y>
       <width>71</width>
       <height>21</height>
@@ -66,7 +69,7 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>100</x>
       <y>30</y>
       <width>381</width>
       <height>31</height>
@@ -76,8 +79,8 @@
    <widget class="QPushButton" name="BT_WriteParam">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>80</y>
+      <x>590</x>
+      <y>180</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -89,24 +92,175 @@
    <widget class="QLineEdit" name="lineEdit_SN">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>80</y>
+      <x>120</x>
+      <y>160</y>
       <width>141</width>
-      <height>31</height>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="whatsThis">
+     <string extracomment="valide length 14,start with D3-"/>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>80</y>
+      <x>50</x>
+      <y>160</y>
       <width>51</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>序列号</string>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateEdit">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>190</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QDateEdit" name="dateEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>220</y>
+      <width>141</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>190</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>生产日期</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>220</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>有效日期</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>200</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>传感器校准码</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_SensorCode">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>200</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="whatsThis">
+     <string extracomment="valide length 14,start with D3-"/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>170</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>传感器批次</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_SensorBatch">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>170</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="whatsThis">
+     <string extracomment="valide length 14,start with D3-"/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>230</y>
+      <width>72</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>硬件版本</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_SensorCode_2">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>230</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="whatsThis">
+     <string extracomment="valide length 14,start with D3-"/>
     </property>
    </widget>
   </widget>
@@ -130,6 +284,11 @@
     <addaction name="actionOption"/>
    </widget>
    <addaction name="File"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="sizeGripEnabled">
+    <bool>true</bool>
+   </property>
   </widget>
   <action name="actionOpen">
    <property name="text">
