@@ -13,17 +13,14 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDateEdit>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -39,32 +36,19 @@ public:
     QPushButton *BT_ChooseFile;
     QLabel *label;
     QLineEdit *lineEdit;
-    QSplitter *splitter_3;
-    QWidget *widget;
-    QVBoxLayout *verticalLayout_5;
-    QSplitter *splitter;
-    QWidget *widget1;
-    QHBoxLayout *horizontalLayout;
-    QVBoxLayout *verticalLayout_2;
+    QPushButton *BT_WriteParam;
+    QLineEdit *lineEdit_SN;
     QLabel *label_2;
+    QDateEdit *dateEdit;
+    QDateEdit *dateEdit_2;
     QLabel *label_3;
     QLabel *label_4;
-    QVBoxLayout *verticalLayout;
-    QDateEdit *dateEdit_2;
-    QDateEdit *dateEdit;
-    QLineEdit *lineEdit_SN;
-    QSplitter *splitter_2;
-    QWidget *widget2;
-    QVBoxLayout *verticalLayout_3;
     QLabel *label_5;
-    QLabel *label_7;
-    QLabel *label_6;
-    QWidget *widget3;
-    QVBoxLayout *verticalLayout_4;
-    QLineEdit *lineEdit_SensorBatch;
     QLineEdit *lineEdit_SensorCode;
+    QLabel *label_6;
+    QLineEdit *lineEdit_SensorBatch;
+    QLabel *label_7;
     QLineEdit *lineEdit_SensorCode_2;
-    QPushButton *BT_WriteParam;
     QMenuBar *menubar;
     QMenu *File;
     QStatusBar *statusBar;
@@ -95,123 +79,49 @@ public:
         lineEdit = new QLineEdit(centralwidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
         lineEdit->setGeometry(QRect(100, 30, 381, 31));
-        splitter_3 = new QSplitter(centralwidget);
-        splitter_3->setObjectName(QString::fromUtf8("splitter_3"));
-        splitter_3->setGeometry(QRect(480, 110, 210, 180));
-        splitter_3->setOrientation(Qt::Vertical);
-        widget = new QWidget(splitter_3);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        verticalLayout_5 = new QVBoxLayout(widget);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        splitter = new QSplitter(widget);
-        splitter->setObjectName(QString::fromUtf8("splitter"));
-        splitter->setOrientation(Qt::Horizontal);
-        widget1 = new QWidget(splitter);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        horizontalLayout = new QHBoxLayout(widget1);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        verticalLayout_2 = new QVBoxLayout();
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        label_2 = new QLabel(widget1);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        verticalLayout_2->addWidget(label_2);
-
-        label_3 = new QLabel(widget1);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        verticalLayout_2->addWidget(label_3);
-
-        label_4 = new QLabel(widget1);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        verticalLayout_2->addWidget(label_4);
-
-
-        horizontalLayout->addLayout(verticalLayout_2);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        dateEdit_2 = new QDateEdit(widget1);
-        dateEdit_2->setObjectName(QString::fromUtf8("dateEdit_2"));
-
-        verticalLayout->addWidget(dateEdit_2);
-
-        dateEdit = new QDateEdit(widget1);
-        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
-
-        verticalLayout->addWidget(dateEdit);
-
-        lineEdit_SN = new QLineEdit(widget1);
-        lineEdit_SN->setObjectName(QString::fromUtf8("lineEdit_SN"));
-        lineEdit_SN->setToolTipDuration(-1);
-
-        verticalLayout->addWidget(lineEdit_SN);
-
-
-        horizontalLayout->addLayout(verticalLayout);
-
-        splitter->addWidget(widget1);
-
-        verticalLayout_5->addWidget(splitter);
-
-        splitter_2 = new QSplitter(widget);
-        splitter_2->setObjectName(QString::fromUtf8("splitter_2"));
-        splitter_2->setOrientation(Qt::Horizontal);
-        widget2 = new QWidget(splitter_2);
-        widget2->setObjectName(QString::fromUtf8("widget2"));
-        verticalLayout_3 = new QVBoxLayout(widget2);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_5 = new QLabel(widget2);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-
-        verticalLayout_3->addWidget(label_5);
-
-        label_7 = new QLabel(widget2);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-
-        verticalLayout_3->addWidget(label_7);
-
-        label_6 = new QLabel(widget2);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-
-        verticalLayout_3->addWidget(label_6);
-
-        splitter_2->addWidget(widget2);
-        widget3 = new QWidget(splitter_2);
-        widget3->setObjectName(QString::fromUtf8("widget3"));
-        verticalLayout_4 = new QVBoxLayout(widget3);
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        lineEdit_SensorBatch = new QLineEdit(widget3);
-        lineEdit_SensorBatch->setObjectName(QString::fromUtf8("lineEdit_SensorBatch"));
-        lineEdit_SensorBatch->setToolTipDuration(-1);
-
-        verticalLayout_4->addWidget(lineEdit_SensorBatch);
-
-        lineEdit_SensorCode = new QLineEdit(widget3);
-        lineEdit_SensorCode->setObjectName(QString::fromUtf8("lineEdit_SensorCode"));
-        lineEdit_SensorCode->setToolTipDuration(-1);
-
-        verticalLayout_4->addWidget(lineEdit_SensorCode);
-
-        lineEdit_SensorCode_2 = new QLineEdit(widget3);
-        lineEdit_SensorCode_2->setObjectName(QString::fromUtf8("lineEdit_SensorCode_2"));
-        lineEdit_SensorCode_2->setToolTipDuration(-1);
-
-        verticalLayout_4->addWidget(lineEdit_SensorCode_2);
-
-        splitter_2->addWidget(widget3);
-
-        verticalLayout_5->addWidget(splitter_2);
-
-        splitter_3->addWidget(widget);
-        BT_WriteParam = new QPushButton(splitter_3);
+        BT_WriteParam = new QPushButton(centralwidget);
         BT_WriteParam->setObjectName(QString::fromUtf8("BT_WriteParam"));
-        splitter_3->addWidget(BT_WriteParam);
+        BT_WriteParam->setGeometry(QRect(590, 180, 93, 28));
+        lineEdit_SN = new QLineEdit(centralwidget);
+        lineEdit_SN->setObjectName(QString::fromUtf8("lineEdit_SN"));
+        lineEdit_SN->setGeometry(QRect(120, 160, 141, 21));
+        lineEdit_SN->setToolTipDuration(-1);
+        label_2 = new QLabel(centralwidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(50, 160, 51, 21));
+        dateEdit = new QDateEdit(centralwidget);
+        dateEdit->setObjectName(QString::fromUtf8("dateEdit"));
+        dateEdit->setGeometry(QRect(120, 190, 141, 21));
+        dateEdit_2 = new QDateEdit(centralwidget);
+        dateEdit_2->setObjectName(QString::fromUtf8("dateEdit_2"));
+        dateEdit_2->setGeometry(QRect(120, 220, 141, 21));
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(50, 190, 72, 15));
+        label_4 = new QLabel(centralwidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(50, 220, 72, 15));
+        label_5 = new QLabel(centralwidget);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(300, 200, 72, 15));
+        lineEdit_SensorCode = new QLineEdit(centralwidget);
+        lineEdit_SensorCode->setObjectName(QString::fromUtf8("lineEdit_SensorCode"));
+        lineEdit_SensorCode->setGeometry(QRect(390, 200, 111, 21));
+        lineEdit_SensorCode->setToolTipDuration(-1);
+        label_6 = new QLabel(centralwidget);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(300, 170, 72, 15));
+        lineEdit_SensorBatch = new QLineEdit(centralwidget);
+        lineEdit_SensorBatch->setObjectName(QString::fromUtf8("lineEdit_SensorBatch"));
+        lineEdit_SensorBatch->setGeometry(QRect(390, 170, 111, 21));
+        lineEdit_SensorBatch->setToolTipDuration(-1);
+        label_7 = new QLabel(centralwidget);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(300, 230, 72, 15));
+        lineEdit_SensorCode_2 = new QLineEdit(centralwidget);
+        lineEdit_SensorCode_2->setObjectName(QString::fromUtf8("lineEdit_SensorCode_2"));
+        lineEdit_SensorCode_2->setGeometry(QRect(390, 230, 111, 21));
+        lineEdit_SensorCode_2->setToolTipDuration(-1);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -253,17 +163,23 @@ public:
         BT_Programm->setText(QApplication::translate("MainWindow", "\347\203\247\345\275\225\347\250\213\345\272\217", nullptr));
         BT_ChooseFile->setText(QApplication::translate("MainWindow", "\351\200\211\346\213\251\346\226\207\344\273\266", nullptr));
         label->setText(QApplication::translate("MainWindow", "\346\226\207\344\273\266\350\267\257\345\276\204", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "\345\272\217\345\210\227\345\217\267", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "\347\224\237\344\272\247\346\227\245\346\234\237", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "\346\234\211\346\225\210\346\227\245\346\234\237", nullptr));
+        BT_WriteParam->setText(QApplication::translate("MainWindow", "\345\206\231\345\205\245\345\217\202\346\225\260", nullptr));
 #ifndef QT_NO_TOOLTIP
         lineEdit_SN->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_WHATSTHIS
         lineEdit_SN->setWhatsThis(QString());
 #endif // QT_NO_WHATSTHIS
+        label_2->setText(QApplication::translate("MainWindow", "\345\272\217\345\210\227\345\217\267", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "\347\224\237\344\272\247\346\227\245\346\234\237", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "\346\234\211\346\225\210\346\227\245\346\234\237", nullptr));
         label_5->setText(QApplication::translate("MainWindow", "\344\274\240\346\204\237\345\231\250\346\240\241\345\207\206\347\240\201", nullptr));
-        label_7->setText(QApplication::translate("MainWindow", "\347\241\254\344\273\266\347\211\210\346\234\254", nullptr));
+#ifndef QT_NO_TOOLTIP
+        lineEdit_SensorCode->setToolTip(QString());
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_WHATSTHIS
+        lineEdit_SensorCode->setWhatsThis(QString());
+#endif // QT_NO_WHATSTHIS
         label_6->setText(QApplication::translate("MainWindow", "\344\274\240\346\204\237\345\231\250\346\211\271\346\254\241", nullptr));
 #ifndef QT_NO_TOOLTIP
         lineEdit_SensorBatch->setToolTip(QString());
@@ -271,19 +187,13 @@ public:
 #ifndef QT_NO_WHATSTHIS
         lineEdit_SensorBatch->setWhatsThis(QString());
 #endif // QT_NO_WHATSTHIS
-#ifndef QT_NO_TOOLTIP
-        lineEdit_SensorCode->setToolTip(QString());
-#endif // QT_NO_TOOLTIP
-#ifndef QT_NO_WHATSTHIS
-        lineEdit_SensorCode->setWhatsThis(QString());
-#endif // QT_NO_WHATSTHIS
+        label_7->setText(QApplication::translate("MainWindow", "\347\241\254\344\273\266\347\211\210\346\234\254", nullptr));
 #ifndef QT_NO_TOOLTIP
         lineEdit_SensorCode_2->setToolTip(QString());
 #endif // QT_NO_TOOLTIP
 #ifndef QT_NO_WHATSTHIS
         lineEdit_SensorCode_2->setWhatsThis(QString());
 #endif // QT_NO_WHATSTHIS
-        BT_WriteParam->setText(QApplication::translate("MainWindow", "\345\206\231\345\205\245\345\217\202\346\225\260", nullptr));
         File->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266", nullptr));
     } // retranslateUi
 

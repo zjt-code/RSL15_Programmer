@@ -43,7 +43,8 @@ private:
     //Define dll handle
     HMODULE hdl_dll;
     QString strLoadFileDir;  
-    uint8_t Device_MAC[6];    
+    uint8_t Device_MAC[6]; 
+    char local_path[_MAX_PATH];  
 
 };
 #endif // MAINWINDOW_H

@@ -9,6 +9,7 @@
 #include "optiondialog.h"
 #include "QAction"
 #include "hardware_config.h"
+#include <direct.h>
 
 
 
@@ -22,23 +23,30 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle(QString(APP_VER));
     setWindowFlags(windowFlags()&~Qt::WindowMaximizeButtonHint);
  
+
+    // add memu action
     ui->menubar->addAction(QStringLiteral("选项"),this,SLOT(on_menuOption_triggered()));
     ui->menubar->addAction(QStringLiteral("帮助"),this,SLOT(on_help_triggered()));
 
     
-    char dir[128];
-    _getcwd(dir,128);
-
-    for(uint8_t i=0;i<strlen(dir);i++)
-    if(dir[i]=='\\')dir[i]='/';
-
-   // strcat_s(dir,"/JLink_x64.dll");
-    strcat_s(dir,"/JLink_x64.dll");
-  //  printf("exe dir=%s\r\n",dir);    
-     hdl_dll =LoadLibrary(dir);
-
+    
+    // get exe path ,convert '\' to '/'
+    _getcwd(local_path,_MAX_PATH);   // _getcwd used for windows develop
+     for(uint8_t i=0;i<strlen(local_path);i++)
+    if(local_path[i]=='\\'  )local_path[i]='/';
 
     
+    char dll_dir[_MAX_PATH];
+    memcpy(dll_dir,local_path,_MAX_PATH);    
+
+    // cat dll path
+    strcat_s(dll_dir,"/JLink_x64.dll");    
+    hdl_dll =LoadLibrary(dll_dir);
+    std::cout<<dll_dir<<std::endl;
+
+// The contents of <filesystem> are available only with C++17 or later.
+    // std::filesystem::path currPath = std::filesystem::current_path();
+    // std::cout<<currPath<<std::endl;  
 
 
 #if ENABLE_QBUG
@@ -77,18 +85,13 @@ void MainWindow::on_BT_ChooseFile_clicked()
     QStringList myTypeLists;
     myTypeLists<<"Hex Files(*.hex)";
     QFileDialog dialog;
-   // dialog.setNameFilters(myTypeLists);
-   // int ret =dialog.exec();
-
-    // std::cout<<ret<<std::endl;
-
     //if(ret==1)
     {
-    //    ui->Info_TextBrowser->append(dialog.getOpenFileName());
- 
-    strLoadFileDir=dialog.getOpenFileName(this,tr("Chose Hex"),"C:/",tr("Hex Files(*.hex)"));
-    ui->lineEdit->setText(strLoadFileDir);
-    ui->Info_TextBrowser->append(strLoadFileDir);
+    //open File to download
+        strLoadFileDir=dialog.getOpenFileName(this,tr("Chose Hex"),QString(local_path),tr("Hex Files(*.hex)"));
+    
+        ui->lineEdit->setText(strLoadFileDir);
+        ui->Info_TextBrowser->append(strLoadFileDir);
 
     }
 }
