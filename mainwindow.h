@@ -36,6 +36,9 @@ private slots:
     void on_optiondialog_accepted();
     void on_optiondialog_rejected();
 
+    void on_timeout_handle();
+    
+
 private:
     Ui::MainWindow *ui;
     OptionDialog *opdialog;

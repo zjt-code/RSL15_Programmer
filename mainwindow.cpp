@@ -10,6 +10,8 @@
 #include "QAction"
 #include "hardware_config.h"
 #include <direct.h>
+#include <QMessageBox>
+#include <QTimer>
 
 
 
@@ -47,22 +49,26 @@ MainWindow::MainWindow(QWidget *parent)
 // The contents of <filesystem> are available only with C++17 or later.
     // std::filesystem::path currPath = std::filesystem::current_path();
     // std::cout<<currPath<<std::endl;  
-
-
-#if ENABLE_QBUG
-
-    //qDebug(dir);
-    //ui->Info_TextBrowser->append(dir);
     if(hdl_dll==NULL)
     {
         ui->Info_TextBrowser->setTextColor(QColor(255,0,0));
         ui->Info_TextBrowser->append("Load DLL Fail !!!");
     }
-    // else
-    // {
-    //     ui->Info_TextBrowser->append("Load Dll OK !!!!");
-    // }
-#endif
+
+//     QTimer myTimer(this);
+
+//     //myTimer.setInterval(1000);
+//    // myTimer.callOnTimeout(SLOT(on_timeout_handle()),Qt::AutoConnection);
+//     connect(&myTimer,SIGNAL(timeout()),this ,SLOT(on_timeout_handle()));
+//     myTimer.start(1000);
+//     // myTimer.CallOnTimeOut()
+
+
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(on_timeout_handle()));
+     timer->start(1000);
+    
+
 
 }
 
@@ -445,8 +451,18 @@ void MainWindow::on_actionOption_triggered()
 
 void MainWindow::on_help_triggered()
 {
+     QMessageBox helpMessage(QMessageBox::Icon::Information, "Thanks QT v5.12", "This windows program is used Jlink driver, ", 
+                 QMessageBox::NoButton, nullptr, Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
 
-    std::cout<<"Help is toggled" <<std::endl;
+ 
+// QMessageBox *helpMessage = new QMessageBox(QMessageBox::Icon::Information, "Thanks QT v5.12", "This windows program is used Jlink driver, ", 
+//                  QMessageBox::NoButton, nullptr, Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
+//     helpMessage->show();
+
+    std::cout<<"Help Message box is end ="<<helpMessage.exec()<<std::endl;
+
+    
+   
 }
 void MainWindow::on_menuOption_triggered()
 {
@@ -498,6 +514,13 @@ void MainWindow::on_optiondialog_rejected()
     std::cout<<"optiondialog cancelled is pressed"<<std::endl;
 
 
+}
+
+void MainWindow::on_timeout_handle()
+{
+
+
+    std::cout<<"Timeout 1s "<<std::endl;
 }
 
 
