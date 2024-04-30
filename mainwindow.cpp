@@ -12,6 +12,7 @@
 #include <direct.h>
 #include <QMessageBox>
 #include <QTimer>
+#include <QDateTime>
 
 
 
@@ -19,14 +20,40 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow) 
     , opdialog(new OptionDialog) 
+    , timer(new QTimer)
+    , status_lable_speed(new QLabel)
+    , status_lable_interface(new QLabel)
+    , status_lable_path(new QLabel)
+    , status_lable_datetime(new QLabel)
 {
 
     ui->setupUi(this); 
     this->setWindowTitle(QString(APP_VER));
     setWindowFlags(windowFlags()&~Qt::WindowMaximizeButtonHint);
  
+ /*********************************************/
+   // add widgets to  status bar
+    status_lable_speed->setText("Speed: " + QString::number(opdialog->Option_get_speed())+"Khz");
+    status_lable_speed->setFixedWidth(100);
+    ui->statusBar->addWidget(status_lable_speed,0);
+
+    status_lable_interface->setText("Interface:" + QString::fromStdString(opdialog->Option_get_inface()==1?"SWD":"JTAG"));
+    status_lable_interface->setFixedWidth(100);
+    ui->statusBar->addWidget(status_lable_interface,0);
+
+    status_lable_path->setText("Pah:");
+    ui->statusBar->addWidget(status_lable_path,1);
+
+    status_lable_datetime->setText(QDateTime::currentDateTime().toString());
+    ui->statusBar->addWidget(status_lable_datetime,0);
+
 
     // add memu action
+ /*********************************************/
+
+
+
+
     ui->menubar->addAction(QStringLiteral("选项"),this,SLOT(on_menuOption_triggered()));
     ui->menubar->addAction(QStringLiteral("帮助"),this,SLOT(on_help_triggered()));
 
@@ -55,16 +82,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->Info_TextBrowser->append("Load DLL Fail !!!");
     }
 
-//     QTimer myTimer(this);
-
-//     //myTimer.setInterval(1000);
-//    // myTimer.callOnTimeout(SLOT(on_timeout_handle()),Qt::AutoConnection);
-//     connect(&myTimer,SIGNAL(timeout()),this ,SLOT(on_timeout_handle()));
-//     myTimer.start(1000);
-//     // myTimer.CallOnTimeOut()
-
-
-     QTimer *timer = new QTimer(this);
+     
      connect(timer, SIGNAL(timeout()), this, SLOT(on_timeout_handle()));
      timer->start(1000);
     
@@ -76,8 +94,16 @@ MainWindow::~MainWindow()
 {
     if(hdl_dll!=NULL)
     FreeLibrary(hdl_dll);
-    // delete myOptionDialog;
+    
+    delete status_lable_speed;
+    delete status_lable_interface;
+    delete status_lable_path;
+    delete status_lable_datetime;
+
+
     delete ui;
+    delete timer;
+
     
 }
 
@@ -98,6 +124,8 @@ void MainWindow::on_BT_ChooseFile_clicked()
     
         ui->lineEdit->setText(strLoadFileDir);
         ui->Info_TextBrowser->append(strLoadFileDir);
+
+        status_lable_path->setText(strLoadFileDir);
 
     }
 }
@@ -171,8 +199,8 @@ void MainWindow::on_BT_Programm_clicked()
 
         //set swd speed
 
-        ui->Info_TextBrowser->append("Speed = " + QString::number(opdialog->Option_get_speed())+"Khz");
-        ui->Info_TextBrowser->append("Interface = " + QString::fromStdString(opdialog->Option_get_inface()==1?"SWD":"JTAG"));
+        // ui->Info_TextBrowser->append("Speed = " + QString::number(opdialog->Option_get_speed())+"Khz");
+        // ui->Info_TextBrowser->append("Interface = " + QString::fromStdString(opdialog->Option_get_inface()==1?"SWD":"JTAG"));
 
         JLINKARM_SetSpeed(opdialog->Option_get_speed());
         //select device
@@ -519,7 +547,7 @@ void MainWindow::on_optiondialog_rejected()
 void MainWindow::on_timeout_handle()
 {
 
-
+    status_lable_datetime->setText(QDateTime::currentDateTime().toString());
     std::cout<<"Timeout 1s "<<std::endl;
 }
 

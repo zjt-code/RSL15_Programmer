@@ -5,6 +5,7 @@
 #include<libloaderapi.h>
 #include <windows.h>
 #include "cgms_prm.h"
+#include <QLabel>
 #include "optiondialog.h"
 
 
@@ -42,6 +43,11 @@ private slots:
 private:
     Ui::MainWindow *ui;
     OptionDialog *opdialog;
+    QTimer *timer;
+    QLabel *status_lable_speed;
+    QLabel *status_lable_interface;
+    QLabel *status_lable_path;
+    QLabel *status_lable_datetime;
     
     //Define dll handle
     HMODULE hdl_dll;
