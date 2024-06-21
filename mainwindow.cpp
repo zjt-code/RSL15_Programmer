@@ -13,6 +13,7 @@
 #include <QMessageBox>
 #include <QTimer>
 #include <QDateTime>
+#include <OpenXLSX.hpp>
 
 
 
@@ -548,7 +549,142 @@ void MainWindow::on_timeout_handle()
 {
 
     status_lable_datetime->setText(QDateTime::currentDateTime().toString());
-    std::cout<<"Timeout 1s "<<std::endl;
+    // std::cout<<"Timeout 1s "<<std::endl;
 }
 
 
+
+// using namespace OpenXLSX;
+
+void MainWindow::on_pb_readFlash_clicked()
+{
+    pIntCharCharInt JLINKARM_ExecCommand;
+    pBoolVoid       JLINKARM_IsConnected;
+    pBoolVoid       JLINKARM_IsOpen;
+    pIntVoid        JLINKARM_Connect;
+    pCharVoid       JLINKARM_Open;
+    pVoidVoid       JLINKARM_SetMaxSpeed,JLINKARM_ResetNoHalt;
+    pVoidInt        JLINKARM_SetSpeed,JLINKARM_BeginDownload;
+    pIntVoid        JLINKARM_EndDownload;       
+   // pVoidU8         JLINKARM_ResetPullsTRST,JLINKARM_ResetPullsRESET;
+    //pIntIntIntVoid  JLINKARM_ReadMem,JLINKARM_WriteMem;
+
+    pIntIntIntVoidInt JLINKARM_ReadMemEx,JLINKARM_WriteMemEx;
+    pIntInt         JLINKARM_TIF_Select;
+
+
+    if(hdl_dll!=NULL)
+     {
+        std::cout<<hdl_dll<<std::endl;
+
+        //int32_t ret= hdl_dll.JLINK_EMU_GetLicenses(buff,256);
+        JLINKARM_ExecCommand=(pIntCharCharInt)GetProcAddress(hdl_dll,"JLINKARM_ExecCommand");
+        JLINKARM_IsConnected =  (pBoolVoid)GetProcAddress(hdl_dll,"JLINKARM_IsConnected");
+        JLINKARM_IsOpen =(pBoolVoid)GetProcAddress(hdl_dll,"JLINKARM_IsOpen");
+        JLINKARM_Connect =(pIntVoid)GetProcAddress(hdl_dll,"JLINKARM_Connect");
+        JLINKARM_Open = (pCharVoid)GetProcAddress(hdl_dll,"JLINKARM_Open");
+        JLINKARM_SetMaxSpeed=(pVoidVoid)GetProcAddress(hdl_dll,"JLINKARM_SetMaxSpeed");
+
+        JLINKARM_SetSpeed = (pVoidInt)GetProcAddress(hdl_dll,"JLINKARM_SetSpeed"); 
+
+        JLINKARM_ResetNoHalt=(pVoidVoid)GetProcAddress(hdl_dll,"JLINKARM_ResetNoHalt");
+      //  JLINKARM_ReadMem    =(pIntIntIntVoid)GetProcAddress(hdl_dll,"JLINKARM_ReadMem");
+        JLINKARM_WriteMemEx =(pIntIntIntVoidInt)GetProcAddress(hdl_dll,"JLINKARM_WriteMemEx");
+        JLINKARM_ReadMemEx  =(pIntIntIntVoidInt)GetProcAddress(hdl_dll,"JLINKARM_ReadMemEx");
+        
+        JLINKARM_BeginDownload =(pVoidInt)GetProcAddress(hdl_dll,"JLINKARM_BeginDownload");
+        JLINKARM_EndDownload  =(pIntVoid)GetProcAddress(hdl_dll,"JLINKARM_EndDownload");
+        JLINKARM_TIF_Select =(pIntInt)GetProcAddress(hdl_dll,"JLINKARM_TIF_Select");
+
+        if(JLINKARM_Open!=NULL)
+        {
+            
+            printf("Jlinkarm_open=%s\r\n",JLINKARM_Open());
+        }
+
+        if(JLINKARM_IsOpen==NULL)
+            std::cout<<"JLINKARM_IsOpen=NULL"<<std::endl;
+        else
+            std::cout<<"JLINKARM_IsOpen="<<(uint32_t)JLINKARM_IsOpen()<<std::endl;
+
+        //select device
+        JLINKARM_ExecCommand("Device=RSL15-512",NULL,0);
+
+        //JLINKARM_SetMaxSpeed();
+        int retcmd=JLINKARM_TIF_Select(opdialog->Option_get_inface());
+       
+        std::cout<<"JLINKARM_TIF_Select ="<<retcmd<<std::endl;
+
+        JLINKARM_SetSpeed(opdialog->Option_get_speed());
+        
+        std::cout<<"JLINLARM_Connect ="<<JLINKARM_Connect()<<std::endl;
+
+        if(JLINKARM_IsConnected==NULL)
+        std::cout<<"JLinkARM_IsConnected=NULL"<<std::endl;
+        else
+        std::cout<<"JLinkARM_IsConnected="<<(uint32_t)JLINKARM_IsConnected()<<std::endl;
+
+
+
+
+     }
+    else
+    {
+        ui->Info_TextBrowser->append(QFont("Hdl_dll is invalide").toString());
+    }
+
+      uchar red_bff[16];
+      int gluc_offset = 0;
+      int gluc = 0;  
+      int gluc_curr = 0;
+
+        std::string path_cur="./new_cur_I0.xlsx";
+        OpenXLSX::XLDocument doc,doc_cur;
+        doc_cur.create(path_cur);
+        auto wks_cur = doc_cur.workbook().worksheet("Sheet1");
+
+        wks_cur.cell("A1").value() = "I0_Index";
+        wks_cur.cell("B1").value() = "I0_Value";
+        wks_cur.cell("C1").value() = "I5_Value";
+        wks_cur.cell("D1").value() = "Gluco";
+
+
+      
+      for(int x=0; x< 6720; x++)
+
+     {
+         int ret_read = JLINKARM_ReadMemEx(FLASHDATA_MAIN_BASE + x *16,16,(void *)red_bff,4);
+
+        gluc_offset = red_bff[1] + ((int)red_bff[2]<<8);
+        gluc = red_bff[3] + ((int)red_bff[4]<<8);
+        gluc_curr = red_bff[7] + ((int)red_bff[8]<<8);
+
+
+           std::string doc_cur_i0_index_cell_name="A"+std::to_string(x+2);
+           std::string doc_cur_io_value_cell_name="B"+std::to_string(x+2);
+           std::string doc_cur_i5_value_cell_name="C"+std::to_string(x+2);
+          //string doc_cur_glucose_value_cell_name="D"+std::to_string(s+2);
+
+
+
+           std::cout<< gluc_offset <<","<<gluc<< ","<<gluc_curr<<std::endl;
+
+            wks_cur.cell(doc_cur_i0_index_cell_name).value() = gluc_offset;
+            wks_cur.cell(doc_cur_io_value_cell_name).value() = (float)gluc_curr/100.0f;
+            wks_cur.cell(doc_cur_i5_value_cell_name).value() = (float)gluc/10.0f;
+    
+
+     }
+      
+
+       doc_cur.save();
+       doc_cur.close();
+
+    // #if ENABLE_QBUG
+    //     dump_mem((unsigned char *)&red_bff[0],sizeof(red_bff));
+
+    // #endif
+
+        std::cout<<"button readFlash is pressed\r\n"<<std::endl;
+
+}

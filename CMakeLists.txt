@@ -9,7 +9,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #plantform is X64
@@ -30,6 +30,8 @@ add_compile_definitions(_AMD64_)
 #endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+
 
 if(ANDROID)
   add_library(P3A_RSL15_Programmer SHARED
@@ -60,4 +62,10 @@ else()
   )
 endif()
 
-target_link_libraries(P3A_RSL15_Programmer PRIVATE Qt5::Widgets)
+
+# add MSVC static lib
+add_library(OpenXLSX STATIC IMPORTED)
+set_property(TARGET OpenXLSX PROPERTY IMPORTED_LOCATION "${PROJECT_SOURCE_DIR}/OpenXLSX/OpenXLSX.lib")
+
+target_link_libraries(P3A_RSL15_Programmer PRIVATE Qt5::Widgets OpenXLSX)
+target_include_directories(P3A_RSL15_Programmer PUBLIC "${CMAKE_SOURCE_DIR}/OpenXLSX")

@@ -79,8 +79,8 @@
    <widget class="QPushButton" name="BT_WriteParam">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>180</y>
+      <x>570</x>
+      <y>170</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -263,6 +263,19 @@
      <string extracomment="valide length 14,start with D3-"/>
     </property>
    </widget>
+   <widget class="QPushButton" name="pb_readFlash">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>220</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>读取Flash</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -270,7 +283,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="File">
