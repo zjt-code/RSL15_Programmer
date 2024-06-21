@@ -40,6 +40,8 @@ private slots:
     void on_timeout_handle();
     
 
+    void on_pb_readFlash_clicked();
+
 private:
     Ui::MainWindow *ui;
     OptionDialog *opdialog;

@@ -49,6 +49,7 @@ public:
     QLineEdit *lineEdit_SensorBatch;
     QLabel *label_7;
     QLineEdit *lineEdit_SensorCode_2;
+    QPushButton *pb_readFlash;
     QMenuBar *menubar;
     QMenu *File;
     QStatusBar *statusBar;
@@ -81,7 +82,7 @@ public:
         lineEdit->setGeometry(QRect(100, 30, 381, 31));
         BT_WriteParam = new QPushButton(centralwidget);
         BT_WriteParam->setObjectName(QString::fromUtf8("BT_WriteParam"));
-        BT_WriteParam->setGeometry(QRect(590, 180, 93, 28));
+        BT_WriteParam->setGeometry(QRect(570, 170, 93, 28));
         lineEdit_SN = new QLineEdit(centralwidget);
         lineEdit_SN->setObjectName(QString::fromUtf8("lineEdit_SN"));
         lineEdit_SN->setGeometry(QRect(120, 160, 141, 21));
@@ -122,10 +123,13 @@ public:
         lineEdit_SensorCode_2->setObjectName(QString::fromUtf8("lineEdit_SensorCode_2"));
         lineEdit_SensorCode_2->setGeometry(QRect(390, 230, 111, 21));
         lineEdit_SensorCode_2->setToolTipDuration(-1);
+        pb_readFlash = new QPushButton(centralwidget);
+        pb_readFlash->setObjectName(QString::fromUtf8("pb_readFlash"));
+        pb_readFlash->setGeometry(QRect(570, 220, 93, 28));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 23));
+        menubar->setGeometry(QRect(0, 0, 800, 26));
         File = new QMenu(menubar);
         File->setObjectName(QString::fromUtf8("File"));
         MainWindow->setMenuBar(menubar);
@@ -194,6 +198,7 @@ public:
 #ifndef QT_NO_WHATSTHIS
         lineEdit_SensorCode_2->setWhatsThis(QString());
 #endif // QT_NO_WHATSTHIS
+        pb_readFlash->setText(QApplication::translate("MainWindow", "\350\257\273\345\217\226Flash", nullptr));
         File->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266", nullptr));
     } // retranslateUi
 

@@ -53,6 +53,10 @@
 #define SN_LEN			14U
 
 
+#define FLASHDATA_MAIN_BASE					0x00160C00
+
+
+
 struct pcba_factory_config_t  //pcba manufacture
 {
 	uint32_t tmp;// align 4 bytes
